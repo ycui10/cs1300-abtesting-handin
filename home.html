@@ -2,13 +2,191 @@
 
 <html>
   <head>
-    <title>INSERT TITLE HERE!</title>
+    <title>A/B Testing </title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- TODO: add additional links here! e.g. fonts, icons, more stylesheets, etc. -->
     <meta content="width=device-width, initial-scale=1" name="viewport" />
   </head>
 
   <body>
     <!-- TODO: put your HTML code here! -->
+    <nav class = "navbar navbar-light" style = "background-color: #FAE3D1">
+			<a class = "navbar-brand" href = "#" >A/B Testing</a>
+	</nav>
+
+	<div class = "container-fluid">
+		<div class = "row" style="margin-top: 5vw;">
+			<h4>
+				Part 0: A & B interfaces
+			</h4>
+		</div>
+		<div class = "row">
+			<div class = "jumbotron" style = "background-color: #FAE3D1">
+				<p>
+					In this assignment, I performed A/B testing on cact-us, an online succulent store, to gather insight on the designs into two different UI designs. The left image below shows a screenshot of interface A. On interface A, the “Add to Cart” button and the number of items in the cart are displayed at the right side of the image. As for the interface B shown on the right side, I moved the “Add to Cart” button and the number of items in the cart to the bottom of the picture.
+				</p>
+			</div>
+		</div>
+		<div class = "row justify-content-center">
+			<img class="interface" src="interface-a.png" style="width: 40vw; padding-right: 2vw">
+        	<img class="interface" src="interface-b.png" style="width: 40vw; padding-right: 2vw">
+		</div>
+		<div class = "row" style="margin-top: 5vw;">
+			<h4>
+				Part 1: Hypotheses
+			</h4>
+		</div>
+		<div class = "row">
+			<div class = "jumbotron" style = "background-color: #FAE3D1; width: 90vw;">
+				<h5>
+					Null Hypotheses
+				</h5>
+				 <div class = "list">
+              		<ol type="1">  
+                	<li> 
+                  		Time to Completion: there is no difference between Interface A and Interface B for time to completion
+                	</li> 
+                	<li>
+                  		Return Rate: there is no difference between Interface A and the Interface B for return rate
+                	</li>
+          		</div>
+
+          		<h5>
+					Alternative Hypotheses
+				</h5>
+				 <div class = "list">
+              		<ol type="1">  
+                	<li>
+                		Time to Completion: time to completion for Interface B would be shorter than Interface A 
+                	</li> 
+                	<li>
+                  		Return Rate: return rate for Interface B would be lower than Interface A
+                	</li>
+          		</div>
+
+          		<h5>
+					Time to Completion
+				</h5>
+
+          		<p>
+          			Personally, I think one of the reasons that lower the usability of interface A is the confusing display of the “Add to Cart” button and no. of items in the cart sign. 
+          		</p>
+          		<div class = "list">
+              		<ol type="1">  
+                	<li>
+                		Displaying the button and the sign next to the image may not show a clear hierarchy. This display may mislead users to think the things on the right are equivalent to the things on the left (the product image). Therefore, some users, especially the ones not familiar with online shopping, may be tempted to think “Add to Cart” is a picture or a piece of information instead of an actionable button.
+                	</li> 
+                	<li>
+                  		 When browsing a shopping website, users would spend most of their time looking at pictures and product descriptions, so putting the button and the sign directly underneath the pictures help reduce the amount of eye movement. This might be more straightforward to users. 
+                	</li>
+          		</div>
+          		<p>
+          			Due to the two reasons above, I think, for interface B,  it would take less time for users navigating to the button and the sign. Therefore, the time to completion will be shorter.
+          		</p>
+          		<h5>
+					Return Rate
+				</h5>
+				<p>
+					To create a hypothesis for the return rate, I would first think about what kind of reasons may lead to users returning to the shopping page. 
+				</p>
+				<div class = "list">
+              		<ol type="1">  
+                	<li>
+                		User may realize they didn’t put enough amount of items in the shopping cart after seeing the total price at the checkout page, so they go back to the shopping page and add more items
+                	</li> 
+                	<li>
+                  		 After seeing the total price at the checkout page, users may find the total price is different from what they expected. In particular, they may find they forgot to add some products in the cart or even if they've clicked the “Add to Cart '', for some reasons, maybe the clicks weren’t successful, the items weren’t added successfully. 
+                	</li>
+          		</div>
+          		<p>
+          			However, I think the improvement I made in Interface B wouldn’t affect the first scenario, as users would mainly calculate the total price in their head when performing the task. It may slightly affect the second scenario though, that is, if the process of finding the “Add to Cart '' button and the no. of items sign is more straightforward, they may realize they didn’t add something successfully before continuing to the check out page. Therefore, the return rate for Interface B may be lower.
+          		</p>
+			</div>
+			</div>
+		<div class = "row" style="margin-top: 5vw;">
+			<h4>
+				Part 2: Collecting Data and Applying Scripts 
+			</h4>
+		</div>
+		<div class = "row">
+			<div class = "jumbotron" style = "background-color: #FAE3D1">
+				<h5>
+					Process
+				</h5>
+				<p>
+					The task given to users is to fill the shopping cart with at least $150 worth of items regardless of the version of Interface they are given. I collected 39 users data in total. 26 of them came from my peers in the UIUX class, and the remaining data came from my friends. 
+				</p>
+				<h5>
+					Data Cleaning
+				</h5>
+				<p>
+					38 users' data are collected in total, and 7 of them are deleted (see the following paragraph for details).  The remaining 31 data are then used to run statistical tests
+				</p>
+				<div class = "list">
+              		<ol type="1">  
+                	<li>
+                		Deleted 5 users that didn’t do anything except for refreshing the page 
+                	</li> 
+                	<li>
+                  		 Deleted 2 user because the items that he or she put into the shopping cart worth way under $150
+                	</li>
+                	<li>
+                		If some user performed the same test on the same version for more than one time, only the first trial that met the $150 threshold is kept. The remaining trials are disregarded because that user may already have some familiarity with the interface when performing the test for the second time.
+                	</li>
+          		</div>
+			</div>
+		</div>
+		<div class = "row" style="margin-top: 5vw;">
+			<h4>
+				Part 3: Collecting Data and Applying Scripts 
+			</h4>
+		</div>
+		<div class = "row">
+			<div class = "jumbotron" style = "background-color: #FAE3D1">
+				<p>
+					After feeding the cleaned data into my python script, I ran a student t test on Time to Completion and a chi-squared test on Return Rate.  Below are my results:
+				</p>
+				<div class = "list">
+              		<ol type="1">  
+                	<li>
+                		Time to Completion: t score: -0.61471706141, p value: 0.272148237823
+                	</li> 
+                	<li>
+                  		Return Rate: chi-squared value: 0.986950757576, p value: 0.320488779675
+                	</li>
+          		</div>
+          		<p>
+          			Using 95% as  my confidence level, both 0.27 > 0.05 and 0.32 > 0.05. Therefore, my result are insignificant. For both time to completion and return rate, we fail to reject the null hypotheses.
+          		</p>
+			</div>
+		</div>
+
+		<div class = "row justify-content-center">
+			<img src="infographics.png" style="width: 70vw;">
+		</div>
+
+		<div class = "row" style="margin-top: 5vw;">
+			<h4>
+				Part 4: Takeaways
+			</h4>
+		</div>
+
+		<div class = "row">
+			<div class = "jumbotron" style = "background-color: #FAE3D1; width: 90vw;">
+				<div class = "list">
+              		<ol type="1">  
+                	<li>
+                		I think the one of the limitations that could affect my test is the amount of the cleaned data I have. After cleaning, I only have 31 users' data in total. 16 from interfacee A and 15 from interface B.
+                	</li> 
+                	<li>
+                  		As for my results, since they are not significant, I fail to reject the null hypothesis. I guess this doesn't really tell me much about any design principle. However, before working on this assignment, I didn't expect I have to deleted that much data in the data cleaning process. Taking this as a lesson, I would try to collect more data next time.
+                	</li>
+          		</div>
+			</div>
+		</div>
+
+		</div>
+	</div>
   </body>
 </html>
